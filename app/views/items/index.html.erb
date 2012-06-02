@@ -1,0 +1,99 @@
+<% content_for :head do %>
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    new Highcharts.Chart({
+      	chart: { renderTo: 'stats_chart' },
+		title: { text: 'Your Visual Graphboard' },
+		series: [{
+			name: "Cost: $",
+			type: 'pie',
+			data: [
+				['COGS', <%= @totalcosts %>],
+				['Fees', <%= @totalfees%>]
+				]
+		}]
+		
+    });
+  });
+</script>
+<% end %>
+<div class="container">
+	<div class="row">
+		<h1>My Stuff for Sale</h1>
+	</div>
+	<div class="row" style="margin-top:10px;">
+		<div class="span1">
+		<%= link_to image_tag('add.png'), new_item_path, :rel => "tooltip",:title => "Add New Item", :class => "btn pull-left", :style => "margin-bottom:10px;" %>
+		</div>
+		<div class="span4">
+		<form class="form-search">
+  			<input type="text" class="input-medium search-query">
+  			<button type="submit" class="btn">Search</button>
+		</form>
+		</div>
+		<div class="span4">
+			There are <strong><%= @items.count %></strong> items in your account! Go get em!
+		</div>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="span6">
+		<table class="table table-bordered table-striped">
+		  <tr>
+		    <th scope="row">Total Items</th>
+			<th>Profit!</th>
+			<th>Profit Margin</th>
+		    <th>Total Sales</th>
+		    <th>Total Costs</th>
+		    <th>Total Fees</th>
+		  </tr>
+		  <tr>
+		    <td><%= @items.count %> </td>
+			<td>$<%= @netincome %></td>
+			<td><%= number_to_percentage(@netincome.to_f/@totalsales*100)%>
+		    <td>$<%= @items.sum('sale') %></td>
+    		<td>$<%= @items.sum('cost') %></td>
+    		<td>$<%= @items.sum('fees')%></td>	
+  		  </tr>
+		</table>
+		</div>
+		<div class="span6">
+			<div id="stats_chart" style="width: 100%; height: 250px;"></div>
+		</div>
+	</div>
+	<div class="row">
+	<%= will_paginate @items %>
+	</div>
+	<div class="row">
+		<table class="table table-bordered table-striped">
+		  <tr>
+		    <th>Item #</th>
+		    <th>Name</th>
+		    <th>Sold at Price</th>
+		    <th>Cost of Item</th>
+		    <th>Fees</th>
+		    <th>Notes</th>
+		    <th></th>
+		  </tr>
+		
+		<% @items.each do |item| %>
+		  <tr>
+		    <td><%= item.id %></td>
+		    <td><%= item.name %></td>
+		    <td>$&nbsp;<%= item.sale %></td>
+		    <td>$&nbsp;<%= item.cost %></td>
+    		<td>$&nbsp;<%= item.fees %></td>
+    		<td><%= item.notes %></td>
+    		<td>
+				<div class="btn-group">
+		  			<%= link_to image_tag('edit.png'), edit_item_path(item), :rel => "tooltip-t", :title => "Edit Item", :class => "btn" %>
+		  			<%= link_to image_tag('delete.png'), item, :class => "btn", confirm: 'Are you sure?', method: :delete %>
+				</div>
+			</td>	
+  		  </tr>
+		<% end %>
+		</table>
+		<%= will_paginate @items %>
+	</div>
+	<%= link_to image_tag('add.png'), new_item_path, :rel => "tooltip",:title => "Add New Item", :class => "btn" %>
+</div>

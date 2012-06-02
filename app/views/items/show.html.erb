@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="span1">ID#:
+		<%= @item.id %>
+	</div>
+	<div class="span3">Name:
+		<%= @item.name %>
+	</div>
+	<div class="span2">Sale Price:
+		<%= @item.sale %>
+	</div>
+	<div class="span2">Fees:
+		<%= @item.fees %>
+	</div>
+	<div class="span4">Notes:
+		<%= @item.notes %>
+	</div>
+</div>
+<div class="row">
+	<div class="span2 offset4">Costs:
+		<%= @item.cost %>
+	</div>
+</div>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
