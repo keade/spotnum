@@ -10,17 +10,41 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="500"
-   height="400"
+   width="476"
+   height="375"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.2 r9819"
-   inkscape:export-filename="/Users/derekkean/Documents/rails/finbatsy/app/assets/images/bg-bottom.png"
+   inkscape:export-filename="/Users/derekkean/Documents/rails/finbatsy/app/assets/images/bg-bottom2.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="logoandstuff.svg">
   <defs
      id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3981">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop3983" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop3985" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3971">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3973" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3975" />
+    </linearGradient>
     <linearGradient
        id="linearGradient3771">
       <stop
@@ -51,14 +75,16 @@
        y1="235.85022"
        x2="219.20306"
        y2="102.51008"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(614.95434,474.8952)" />
     <filter
        id="filter3835"
        inkscape:label="Drop shadow"
        width="1.5"
        height="1.5"
-       x="-.25"
-       y="-.25">
+       x="-0.25"
+       y="-0.25"
+       color-interpolation-filters="sRGB">
       <feGaussianBlur
          id="feGaussianBlur3837"
          in="SourceAlpha"
@@ -90,8 +116,9 @@
        inkscape:label="Drop shadow"
        width="1.5"
        height="1.5"
-       x="-.25"
-       y="-.25">
+       x="-0.25"
+       y="-0.25"
+       color-interpolation-filters="sRGB">
       <feGaussianBlur
          id="feGaussianBlur3873"
          in="SourceAlpha"
@@ -118,6 +145,25 @@
            in="SourceGraphic" />
       </feMerge>
     </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3971"
+       id="linearGradient3977"
+       x1="263.68533"
+       y1="1046.8545"
+       x2="255.6041"
+       y2="679.159"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3981"
+       id="linearGradient3987"
+       x1="250"
+       y1="75"
+       x2="250"
+       y2="375"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0641169,0,0,1,-10.453691,674.88501)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -127,16 +173,20 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="332.61888"
-     inkscape:cy="349.98521"
+     inkscape:cx="494.76511"
+     inkscape:cy="140.57545"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="705"
-     inkscape:window-x="0"
+     inkscape:window-width="1600"
+     inkscape:window-height="878"
+     inkscape:window-x="1280"
      inkscape:window-y="0"
-     inkscape:window-maximized="1">
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
     <inkscape:grid
        type="xygrid"
        id="grid2985"
@@ -161,19 +211,17 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-652.36218)">
+     transform="translate(-8.1167288,-674.88501)">
     <rect
-       style="fill:url(#linearGradient3777);fill-opacity:1;stroke:none;stroke-opacity:1"
+       style="fill:url(#linearGradient3777);fill-opacity:1;stroke:none"
        id="rect2993"
        width="701.04584"
        height="168.69548"
-       x="-94.954338"
-       y="78.771492"
-       transform="translate(0,652.36218)" />
+       x="520"
+       y="553.66669" />
     <path
-       transform="translate(0,652.36218)"
        style="fill:#008000;fill-opacity:1;stroke:none;filter:url(#filter3835)"
-       d="m 0,230 c 40,-20 40,-20 80,-10 40,10 30,-10 150,0 18.63764,1.55314 30.72402,-19.819 70,-10 80,20 120,0 140,0 20,0 20,20 60,20 40,0 0,170 0,170 L 0,400 c 0,0 -40,-150 0,-170 z"
+       d="m 630,702.36218 c 40,-20 40,-20 80,-10 40,10 30,-10 150,0 18.63764,1.55314 30.72402,-19.819 70,-10 80,20 120,0 140,0 20,0 20,20 60,20 40,0 0,170 0,170 l -500,0 c 0,0 -40,-150 0,-170 z"
        id="rect2987"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="zzsszzccz" />
@@ -185,7 +233,7 @@
        sodipodi:cy="-120"
        sodipodi:rx="20"
        sodipodi:ry="20"
-       d="m 120,-120 a 20,20 0 1 1 -40,0 20,20 0 1 1 40,0 z"
+       d="m 120,-120 c 0,11.04569 -8.95431,20 -20,20 -11.045695,0 -20,-8.95431 -20,-20 0,-11.04569 8.954305,-20 20,-20 11.04569,0 20,8.95431 20,20 z"
        transform="matrix(2.75,0,0,2.75,-140,897.36218)" />
     <path
        sodipodi:type="arc"
@@ -195,7 +243,7 @@
        sodipodi:cy="-85"
        sodipodi:rx="35"
        sodipodi:ry="35"
-       d="m 170,-85 a 35,35 0 1 1 -26.79005,-34.02347 L 135,-85 z"
+       d="m 170,-85 c 0,19.329966 -15.67003,35 -35,35 -19.32997,0 -35,-15.670034 -35,-35 0,-19.32997 15.67003,-35 35,-35 2.76562,0 5.52149,0.3278 8.20995,0.97653 L 135,-85 z"
        transform="matrix(-1.2465651,0.31486012,-0.31486012,-1.2465651,276.52335,418.89805)"
        sodipodi:start="0"
        sodipodi:end="4.9491651" />
@@ -211,7 +259,7 @@
          x="139.40105"
          y="609.91534">SpotNumber</tspan></text>
     <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-opacity:1"
+       style="fill:none;stroke:none"
        id="rect3885"
        width="560.90863"
        height="138.88832"
@@ -221,5 +269,61 @@
        inkscape:export-filename="/Users/derekkean/Documents/rails/finbatsy/app/assets/images/spotnumber-logo.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
+    <image
+       y="674.88501"
+       x="7.5453"
+       id="image3968"
+       xlink:href="data:image/png;base64,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
+Bw9ngpnP/YqHAAAAAElFTkSuQmCC
+"
+       height="375"
+       width="476.71429"
+       style="fill:url(#linearGradient3977);fill-opacity:1" />
+    <rect
+       style="fill:url(#linearGradient3987);fill-opacity:1;stroke:none"
+       id="rect3979"
+       width="535.31036"
+       height="388.90872"
+       x="-25.502575"
+       y="670.06763" />
   </g>
 </svg>

@@ -8,12 +8,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         UserMailer.welcome_email(@user).deliver
-        
-        format.html { redirect_to root_path, :notice => 'You are now a loved member of Spotnumber!' }
-        format.json { render :json => @user, :status => :created, :location => @user }
-      else
-        format.html { render :action => "new" }
-        format.json { render :json => @user.errors, :status => :unprocessable_entity }
+        flash[:success] = "You are now ready to begin making more!"
+        redirect_to root_path
       end
     end
   end

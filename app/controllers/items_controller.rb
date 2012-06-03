@@ -5,9 +5,12 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = current_user.items.paginate(:page => params[:page], :per_page => 10)
+    @items = current_user.items.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
     @totalsales = current_user.items.sum('sale')
     @totalcosts = current_user.items.sum('cost')
+    @totalsalesearch = current_user.items.search(params[:search]).sum('sale')
+    @totalcostsearch = current_user.items.search(params[:search]).sum('cost')
+    @totalfeesearch = current_user.items.search(params[:search]).sum('fees')
     @totalfees = current_user.items.sum('fees')
     @totalexpenses = @totalcosts+@totalfees
     @netincome = @totalsales-@totalexpenses
@@ -49,10 +52,8 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item  = current_user.items.build(params[:item])
-    if @item.save
-      Pusher['welcome-channel'].trigger('created', {
-        :greeting => "Your Item has been added! Thanks!"
-      })
+    if @item.save 
+      flash[:success] = "Item Added"
       redirect_to root_path
     else
       render 'users/index'
@@ -66,7 +67,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Item was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

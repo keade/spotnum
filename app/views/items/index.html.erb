@@ -3,13 +3,14 @@
   $(function () {
     new Highcharts.Chart({
       	chart: { renderTo: 'stats_chart' },
-		title: { text: 'Your Visual Graphboard' },
+		title: { text: 'Slice O Costs' },
 		series: [{
 			name: "Cost: $",
 			type: 'pie',
 			data: [
-				['COGS', <%= @totalcosts %>],
-				['Fees', <%= @totalfees%>]
+				['COGS', <%= @totalcostsearch %>],
+				['Fees', <%= @totalfeesearch %>],
+				['Revenue', <%= @totalsalesearch %>]
 				]
 		}]
 		
@@ -19,16 +20,21 @@
 <% end %>
 <div class="container">
 	<div class="row">
-		<h1>My Stuff for Sale</h1>
+		<h1>My Dashboard! </h1>
 	</div>
 	<div class="row" style="margin-top:10px;">
 		<div class="span1">
 		<%= link_to image_tag('add.png'), new_item_path, :rel => "tooltip",:title => "Add New Item", :class => "btn pull-left", :style => "margin-bottom:10px;" %>
 		</div>
-		<div class="span4">
+		<div class="span5">
 		<form class="form-search">
-  			<input type="text" class="input-medium search-query">
-  			<button type="submit" class="btn">Search</button>
+			<%= form_tag items_path, :method => 'get' do %>
+			  <p>
+			    <%= text_field_tag :search, params[:search], :class => "input-medium search-query" %>
+			    <%= submit_tag "Search", :name => nil, :class => "btn" %>
+				<%= link_to 'Clear', root_path, :style => "padding:8px;" %>
+			  </p>
+			<% end %>
 		</form>
 		</div>
 		<div class="span4">
@@ -37,7 +43,7 @@
 	  </div>
 	</div>
 	<div class="row">
-		<div class="span6">
+		<div class="span5">
 		<table class="table table-bordered table-striped">
 		  <tr>
 		    <th scope="row">Total Items</th>
@@ -51,9 +57,9 @@
 		    <td><%= @items.count %> </td>
 			<td>$<%= @netincome %></td>
 			<td><%= number_to_percentage(@netincome.to_f/@totalsales*100)%>
-		    <td>$<%= @items.sum('sale') %></td>
-    		<td>$<%= @items.sum('cost') %></td>
-    		<td>$<%= @items.sum('fees')%></td>	
+		    <td>$<%= @totalsales %></td>
+    		<td>$<%= @totalcosts %></td>
+    		<td>$<%= @totalfees %></td>	
   		  </tr>
 		</table>
 		</div>
@@ -67,12 +73,12 @@
 	<div class="row">
 		<table class="table table-bordered table-striped">
 		  <tr>
-		    <th>Item #</th>
-		    <th>Name</th>
-		    <th>Sold at Price</th>
-		    <th>Cost of Item</th>
-		    <th>Fees</th>
-		    <th>Notes</th>
+		    <th><a href="#" rel="tooltip-t" title="This is the unique item number associated with each of your items">Item #</a></th>
+		    <th><a href="#" rel="tooltip-t" title="Your item names will be here. Make them easy to remember. Be nice to your memory.">Name</a></th>
+		    <th><a href="#" rel="tooltip-t" title="The price which the item sold at will display here.">Sold at Price</a></th>
+		    <th><a href="#" rel="tooltip-t" title="Total cost of all inputs to create/buy/whatever your item will be added here">Cost of Item</a></th>
+		    <th><a href="#" rel="tooltip-t" title="Them pesky fees. We keep tabs on them here.">Fees</th>
+		    <th><a href="#" rel="tooltip-t" title="Maybe you want to keep poetry with your goods? Maybe just descriptions.">Notes</th>
 		    <th></th>
 		  </tr>
 		
@@ -87,7 +93,7 @@
     		<td>
 				<div class="btn-group">
 		  			<%= link_to image_tag('edit.png'), edit_item_path(item), :rel => "tooltip-t", :title => "Edit Item", :class => "btn" %>
-		  			<%= link_to image_tag('delete.png'), item, :class => "btn", confirm: 'Are you sure?', method: :delete %>
+		  			<%= link_to image_tag('delete.png'), item, :class => "btn", confirm: 'Are you sure you want to delete this item?', method: :delete %>
 				</div>
 			</td>	
   		  </tr>
