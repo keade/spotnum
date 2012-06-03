@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
     @totalfees = current_user.items.sum('fees')
     @totalexpenses = @totalcosts+@totalfees
     @netincome = @totalsales-@totalexpenses
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -54,6 +55,9 @@ class ItemsController < ApplicationController
     @item  = current_user.items.build(params[:item])
     if @item.save 
       flash[:success] = "Item Added"
+      Pusher['quad-copter'].trigger('created', {
+        :greet => "Someone is Ballin!"
+      })
       redirect_to root_path
     else
       render 'users/index'

@@ -1,3 +1,28 @@
+<% content_for :head do %>
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+	Highcharts.setOptions({
+        colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']
+    });
+    new Highcharts.Chart({
+      	chart: { renderTo: 'frontpage_chart',
+ 				 backgroundColor: 'transparent'
+			   },
+		title: { text: '' },
+		series: [{
+			name: "$",
+			type: 'pie',
+			data: [
+				['Costs', <%= @frontcosts %>],
+				['Fees', <%= @frontfees %>],
+				['Revenue', <%= @frontsales %>]
+				]
+		}]
+		
+    });
+  });
+</script>
+<% end %>
 <div class="row">
 	<div class="span12" style="text-align:center;">
 		<div class="hero-unit well">
@@ -19,7 +44,8 @@
 	</div>
 	<div class="span6">
 		<div class="hero-unit well">
-			
+			<p><strong>SpotNumber users are tracking their digital and real-world sales with amazing results</strong></p>
+			<div id="frontpage_chart"></div>
 		</div>
 	</div>
 </div>
