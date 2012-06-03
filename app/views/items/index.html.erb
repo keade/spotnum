@@ -24,14 +24,14 @@
 	</div>
 	<div class="row" style="margin-top:10px;">
 		<div class="span1">
-		<%= link_to image_tag('add.png'), new_item_path, :rel => "tooltip",:title => "Add New Item", :class => "btn pull-left", :style => "margin-bottom:10px;" %>
+		<%= link_to image_tag('add.png'), new_item_path, :rel => "tooltip",:title => "Add New Item", :class => "btn pull-left", :style => "margin-bottom:10px;", :onClick => "_gaq.push(['_trackEvent', 'Dashboard', 'Add', 'Item Add Top']);" %>
 		</div>
 		<div class="span5">
 		<form class="form-search">
 			<%= form_tag items_path, :method => 'get' do %>
 			  <p>
 			    <%= text_field_tag :search, params[:search], :class => "input-medium search-query" %>
-			    <%= submit_tag "Search", :name => nil, :class => "btn" %>
+			    <%= submit_tag "Search", :name => nil, :class => "btn", :onClick => "_gaq.push(['_trackEvent', 'Dashboard', 'Search', 'Search Box']);" %>
 				<%= link_to 'Clear', root_path, :style => "padding:8px;" %>
 			  </p>
 			<% end %>
@@ -101,5 +101,5 @@
 		</table>
 		<%= will_paginate @items %>
 	</div>
-	<%= link_to image_tag('add.png'), new_item_path, :rel => "tooltip",:title => "Add New Item", :class => "btn" %>
+	<%= link_to image_tag('add.png'), new_item_path, :rel => "tooltip",:title => "Add New Item", :class => "btn", :onClick => "_gaq.push(['_trackEvent', 'Dashboard', 'Add', 'Item Add Top']);" %>
 </div>
