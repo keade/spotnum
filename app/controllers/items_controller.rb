@@ -50,7 +50,9 @@ class ItemsController < ApplicationController
   def create
     @item  = current_user.items.build(params[:item])
     if @item.save
-      flash[:success] = "#{Item.name} added!"
+      Pusher['welcome-channel'].trigger('created', {
+        :greeting => "Your Item has been added! Thanks!"
+      })
       redirect_to root_path
     else
       render 'users/index'

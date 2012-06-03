@@ -15,6 +15,7 @@ gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'em-http-request'
 gem 'bootstrap-will_paginate'
 gem 'sendgrid'
+gem 'pusher'
 
 
 # Gems used only for assets and not required
