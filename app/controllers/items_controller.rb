@@ -54,9 +54,8 @@ class ItemsController < ApplicationController
   def create
     @item  = current_user.items.build(params[:item])
     if @item.save 
-      flash[:success] = "Item Added"
-      Pusher['quad-copter'].trigger('created', {
-        :greet => "Someone is Ballin!"
+      Pusher['quadcopter'].trigger('created', {
+        :greeting => "Someone is Ballin"
       })
       redirect_to root_path
     else
