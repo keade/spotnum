@@ -5,7 +5,7 @@ class UserMailer < ActionMailer::Base
   
   def welcome_email(user)
     sendgrid_category "Welcome"
-    mail :to => user.email, :subject => "Thanks for registering for Spotnumber! We're here to help.")
+    mail :to => user.email, :subject => "Thanks for registering for Spotnumber! We're here to help."
   end
   
 end
