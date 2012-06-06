@@ -7,10 +7,10 @@ class UserMailer < ActionMailer::Base
   sendgrid_enable :ganalytics, :opentrack
   
   def signup_email(user)
-    @user = current_user
+    @user = user
     @url = "http://www.spotnumber.com/users/sign_up"
     sendgrid_category "Welcome"
-    mail :to => current_user.email, :subject => "Thanks for registering for Spotnumber! We're here to help."
+    mail :to => user.email, :subject => "Thanks for registering for Spotnumber! We're here to help."
   end
   
 end
