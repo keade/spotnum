@@ -4,13 +4,13 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    
-    respond_to do |format|
-      if @user.save
-        UserMailer.welcome_email(@user).deliver
-        flash[:success] = "You are now ready to begin making more!"
-        redirect_to root_path
-      end
-    end
+    if @user.save
+    # Deliver the signup_email
+    Notifier.signup_email(@user).deliver
+    redirect_to root_path
+    else
+    render :action => "new"
   end
+end
+
 end
