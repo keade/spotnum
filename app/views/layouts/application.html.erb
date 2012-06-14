@@ -30,7 +30,7 @@
 		</a>
 		<div class="navbar-text pull-right">
 		  <% if user_signed_in? %>
-		 you are <strong><%= current_user.email %></strong> and we love you!&nbsp;&nbsp;<%= link_to "Sign out", destroy_user_session_path, :class => "btn btn-warning", :method => :delete %>
+		 you are <strong><%= current_user.email %></strong> and we love you!&nbsp;&nbsp;<%= link_to "Sign out", destroy_user_session_path, :class => "btn btn-warning", :method => :delete %>&nbsp;<%= link_to "Edit Account", edit_user_registration_path, :class=> "btn btn-info" %>
 		  <% else %>
 			<%= link_to "Sign In", new_user_session_path, :class => "btn btn-success btn-large", :onClick => "_gaq.push(['_trackEvent', 'Front Page', 'Sign In', 'Top right sign in']);" %>
 		  <% end %>
@@ -45,17 +45,6 @@
 	    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
 	  </div>
 	<% end %>
-	<script src="realtime-notifications/src/lib/gritter/js/jquery.gritter.min.js"></script>
-	<link href="realtime-notifications/src/lib/gritter/css/jquery.gritter.css"rel="stylesheet" type="text/css" />
-	<script src="http://js.pusherapp.com/1.12/pusher.min.js"></script>
-	<script src="realtime-notifications/src/PusherNotifier.js"></script>
-	 <script type="text/javascript">
-	 var pusher = new Pusher('<%= Pusher.key %>');
-	 var channel = pusher.subscribe('quadcopter');
-	 channel.bind('created', function(data) {
-	   alert(data.greeting);
-	 });
-	 </script>
 	
 	<%= yield %>
 	

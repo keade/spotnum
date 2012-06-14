@@ -44,24 +44,26 @@
 	</div>
 	<div class="row">
 		<div class="span5">
-		<table class="table table-bordered table-striped">
-		  <tr>
-		    <th scope="row">Total Items</th>
-			<th>Profit!</th>
-			<th>Profit Margin</th>
-		    <th>Total Sales</th>
-		    <th>Total Costs</th>
-		    <th>Total Fees</th>
-		  </tr>
-		  <tr>
-		    <td><%= @items.count %> </td>
-			<td>$<%= @netincome %></td>
-			<td><%= number_to_percentage(@netincome.to_f/@totalsales*100)%>
-		    <td>$<%= @totalsales %></td>
-    		<td>$<%= @totalcosts %></td>
-    		<td>$<%= @totalfees %></td>	
-  		  </tr>
-		</table>
+			<div class="row">
+				<table class="table table-bordered table-striped">
+				  <tr>
+				    <th scope="row">Total Items</th>
+					<th>Profit!</th>
+					<th>Profit Margin</th>
+				    <th>Total Sales</th>
+				    <th>Total Costs</th>
+				    <th>Total Fees</th>
+				  </tr>
+				  <tr>
+				    <td><%= @items.count %> </td>
+					<td>$<%= @netincome %></td>
+					<td><%= number_to_percentage(@netincome.to_f/@totalsales*100)%>
+				    <td>$<%= @totalsales %></td>
+    				<td>$<%= @totalcosts %></td>
+    				<td>$<%= @totalfees %></td>	
+  				  </tr>
+				</table>
+			</div>
 		</div>
 		<div class="span6">
 			<div id="stats_chart" style="width: 100%; height: 250px;"></div>

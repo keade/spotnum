@@ -54,10 +54,7 @@ class ItemsController < ApplicationController
   def create
     @item  = current_user.items.build(params[:item])
     if @item.save 
-      Pusher['quadcopter'].trigger('created', {
-        :greeting => "Someone is Ballin"
-      })
-      redirect_to root_path
+      redirect_to root_path, :notice => 'Added in, Go get em' 
     else
       render 'users/index'
     end
