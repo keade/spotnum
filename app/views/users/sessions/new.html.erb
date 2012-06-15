@@ -11,11 +11,11 @@
 		  </div>
 		
 		  <div class="actions">
-		    <%= f.button :submit, "Sign in", :onClick => "_gaq.push(['_trackEvent', 'Sign In', 'Yes', 'Sign In']);" %>
+		    <%= f.button :submit, "Sign in", :class => "btn", :onClick => "_gaq.push(['_trackEvent', 'Sign In', 'Yes', 'Sign In']);" %>
 		  </div>
 		<% end %>
 		
-		<%= render "links" %>
+		<%= render 'users/links' %>
 		</div>
 	</div>
 </div>

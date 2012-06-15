@@ -1,9 +1,5 @@
 Finbatsy::Application.configure do
-  require 'pusher'
-  
-  Pusher.app_id = 21657
-  Pusher.key = '78dad0e9e3c5a7c7b733'
-  Pusher.secret = '1cc54e97ae1aa7794953'
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
