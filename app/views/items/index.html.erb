@@ -19,12 +19,13 @@
 </script>
 <% end %>
 <div class="container">
+  <div class="span12">
 	<div class="row">
 		<h1>My Dashboard! </h1>
 	</div>
 	<div class="row" style="margin-top:10px;">
 		<div class="span1">
-		<%= link_to image_tag('add.png'), new_item_path, :rel => "tooltip",:title => "Add New Item", :class => "btn pull-left", :style => "margin-bottom:10px;", :onClick => "_gaq.push(['_trackEvent', 'Dashboard', 'Add', 'Item Add Top']);" %>
+		<%= link_to image_tag('add.png'), new_item_path, :rel => "tooltip", :title => "Add New Item", :class => "btn", :style => "margin-bottom:10px;", :onClick => "_gaq.push(['_trackEvent', 'Dashboard', 'Add', 'Item Add Top']);" %>
 		</div>
 		<div class="span5">
 		<form class="form-search">
@@ -40,8 +41,8 @@
 		<div class="span4">
 			There are <strong><%= @items.count %></strong> items in your account! Go get em!
 		</div>
-	  </div>
 	</div>
+<!--</div>-->
 	<div class="row">
 		<div class="span5">
 			<div class="row">
@@ -96,12 +97,11 @@
 				<div class="btn-group">
 		  			<%= link_to image_tag('edit.png'), edit_item_path(item), :rel => "tooltip-t", :title => "Edit Item", :class => "btn" %>
 		  			<%= link_to image_tag('delete.png'), item, :class => "btn", confirm: 'Are you sure you want to delete this item?', method: :delete %>
-				</div>
 			</td>	
   		  </tr>
 		<% end %>
 		</table>
 		<%= will_paginate @items %>
 	</div>
-	<%= link_to image_tag('add.png'), new_item_path, :rel => "tooltip",:title => "Add New Item", :class => "btn", :onClick => "_gaq.push(['_trackEvent', 'Dashboard', 'Add', 'Item Add Top']);" %>
+  </div>
 </div>
