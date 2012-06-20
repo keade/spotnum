@@ -7,6 +7,17 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable
 
+  before_validation :whitelisted
+  
+  def whitelisted
+      unless %w{celebrityemail}.include? email
+        errors.add :email, "is not on our invitation list"  
+    end
+  end
+
   # Setup accessible (or protected) attributes for your model :password_confirmation
   attr_accessible :email, :password, :remember_me, :password_confirmation
+  
+  
+  
 end
