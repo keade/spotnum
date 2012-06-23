@@ -3,11 +3,14 @@
 > private alpha
 
 ### to do ###
-	6/20/2012 -DONE
+
+	`6/20/2012 -DONE`
+	
 1. alpha invitation list
 - fix sendgrid!
 
-	6/25/2012
+	`6/25/2012`
+	
 2. line item costs
 - rememberable
 - has_and_belongs_to_many or ?
@@ -15,20 +18,23 @@
 - etc? ...
 - hourly rate * time to create!
 
-	7/15/2012
+	`7/15/2012`
+	
 3. Etsy, Ebay, Shopify API
 - sync with account
 - background cache all 'sold' or 'active' listings
 - price, date added, date sold (if), item name, item description, image, tags?, quantity, etc...
 - ready only or edit?
 
-	7/31/2012
+	`7/31/2012`
+	
 4. Stripe billing
 - 2 levels
 - monthly for use as tracker
 - economies of scale account
 
-	6/27/2012
+	`6/27/2012`
+	
 5. Graphing
 - different graph types
 - choose graph data
