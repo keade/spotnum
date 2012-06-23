@@ -6,7 +6,7 @@
 
 	`6/20/2012 -DONE`
 	
-1. alpha invitation list
+<del>1. alpha invitation list</del>
 - fix sendgrid!
 
 	`6/25/2012`
@@ -26,14 +26,14 @@
 - price, date added, date sold (if), item name, item description, image, tags?, quantity, etc...
 - ready only or edit?
 
-	`7/31/2012`
+	`7/25/2012`
 	
 4. Stripe billing
 - 2 levels
 - monthly for use as tracker
 - economies of scale account
 
-	`6/27/2012`
+	`8/10/2012`
 	
 5. Graphing
 - different graph types
