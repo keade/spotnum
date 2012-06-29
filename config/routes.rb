@@ -10,6 +10,8 @@ Finbatsy::Application.routes.draw do
   resources :items
   root :to => 'pages#home'
   
+  match '/about', :to => 'pages#about'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

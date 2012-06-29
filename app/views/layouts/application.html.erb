@@ -29,6 +29,10 @@
 		  <%= image_tag('spotnumber-logo-s.png')%>
 		</a>
 		<div class="navbar-text pull-right">
+			<ul class="nav nav-pills">
+			  <li><a href="/">Home</a></li>
+			  <li><%= link_to "About", about_path %></li>
+			</ul>
 		  <% if user_signed_in? %>
 		 you are <strong><%= current_user.email %></strong> and we love you!&nbsp;&nbsp;<%= link_to "Sign out", destroy_user_session_path, :class => "btn btn-warning", :method => :delete %>&nbsp;<%= link_to "Edit Account", edit_user_registration_path, :class=> "btn btn-info" %>
 		  <% else %>
