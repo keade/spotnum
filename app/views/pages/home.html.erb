@@ -1,4 +1,4 @@
-<% content_for :head do %>
+<% content_for :experiment do %>
 <!-- Google Analytics Content Experiment code -->
 <script>function utmx_section(){}function utmx(){}(function(){var
 k='60645901-0',d=document,l=d.location,c=d.cookie;
@@ -13,6 +13,8 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 '" type="text/javascript" charset="utf-8"></sc'+'ript>')})();
 </script><script>utmx('url','A/B');</script>
 <!-- End of Google Analytics Content Experiment code -->
+<% end %>
+<% content_for :head do %>
 <script type="text/javascript" charset="utf-8">
   $(function () {
 	Highcharts.setOptions({

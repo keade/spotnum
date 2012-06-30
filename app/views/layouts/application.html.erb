@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= yield :head %>
+	<%= yield :experiment %>
   <title>Spotnumber - Finance for Crafters</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application", "highcharts" %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag %>
+	<%= yield :head %>
 	<script type="text/javascript">
 
 	  var _gaq = _gaq || [];
