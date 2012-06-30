@@ -26,6 +26,7 @@
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
+	  <div class="span12">
 		<a class="brand" href="/">
 		  <%= image_tag('spotnumber-logo-s.png')%>
 		</a>
@@ -40,6 +41,7 @@
 			<%= link_to "Sign In", new_user_session_path, :class => "btn btn-success btn-large", :onClick => "_gaq.push(['_trackEvent', 'Front Page', 'Sign In', 'Top right sign in']);" %>
 		  <% end %>
 		</div>
+	  </div>
     </div>
   </div>
 </div>
