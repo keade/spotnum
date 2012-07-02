@@ -6,7 +6,7 @@
 
 	`6/20/2012 -DONE`
 	
-<del>1. alpha invitation list</del>
+<del>1. alpha invitation list</del> Moved into confirmable only- but confirm error. 
 - fix sendgrid!
 
 	`6/25/2012`
@@ -43,7 +43,7 @@
 
 ### front end stuff ###
 
-1. About page
+<del>1. About page</del>
 2. Pricing Page
 3. UX/UI redo of dashboard
 4. fiverr some designs and icons
