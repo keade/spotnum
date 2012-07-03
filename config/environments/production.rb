@@ -1,6 +1,7 @@
 Finbatsy::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  config.action_mailer.default_url_options = { :host => 'floating-robot-4761.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'spotnumber.com' }
+  config.action_mailer.perform_deliveries = true
   # Code is not reloaded between requests
   config.cache_classes = true
 
