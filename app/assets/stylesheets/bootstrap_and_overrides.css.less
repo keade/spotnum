@@ -179,21 +179,21 @@ table {
 // Navbar
 // -------------------------
 @navbarHeight:                    40px;
-@navbarBackground:                @linkColor;
-@navbarBackgroundHighlight:       lighten(@linkColor, 10%);
+@navbarBackground:                #F3F3F3;
+@navbarBackgroundHighlight:       @navbarBackground;
 
-@navbarText:                      @grayLighter;
-@navbarLinkColor:                 @grayLighter;
-@navbarLinkColorHover:            @white;
+@navbarText:                      @gray;
+@navbarLinkColor:                 @gray;
+@navbarLinkColorHover:            @grayDark;
 @navbarLinkColorActive:           @navbarLinkColorHover;
 @navbarLinkBackgroundHover:       transparent;
-@navbarLinkBackgroundActive:      rgba(0,0,0,.2);
+@navbarLinkBackgroundActive:      @navbarBackground;
 
 @navbarSearchBackground:          lighten(@navbarBackground, 25%);
 @navbarSearchBackgroundFocus:     @white;
 @navbarSearchBorder:              darken(@navbarSearchBackground, 30%);
-@navbarSearchPlaceholderColor:    @white;
-@navbarBrandColor:                @navbarLinkColor;
+@navbarSearchPlaceholderColor:    #ccc;
+@navbarBrandColor:                @headingsColor;
 
 
 // Hero unit

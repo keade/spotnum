@@ -3,10 +3,13 @@
   $(function () {
     new Highcharts.Chart({
       	chart: { renderTo: 'stats_chart' },
-		title: { text: 'Slice O Costs' },
+		title: { text: '' },
+		xAxis: {
+					categories: ['Costs of Goods Sold', 'Fees', 'Revenue']
+				},
 		series: [{
-			name: "Cost: $",
-			type: 'pie',
+			name: "Cost Data",
+			type: 'column',
 			data: [
 				['COGS', <%= @totalcostsearch %>],
 				['Fees', <%= @totalfeesearch %>],
@@ -39,7 +42,7 @@
 		</form>
 		</div>
 		<div class="span4">
-			There are <strong><%= @items.count %></strong> items in your account! Go get em!
+			There are <strong><%= @items.count %></strong> total items in your account.
 		</div>
 	</div>
 <!--</div>-->
